@@ -79,6 +79,6 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           file: ./docker/Dockerfile-${{ matrix.docker-base-image }}
-          tags: ${{ steps.meta.outputs.tags  }}
+          tags: ${{ steps.meta.outputs.tags  }}-${{ matrix.docker-base-image }}
           build-args: |
             DOCKER_TAG=${{ join(steps.meta.outputs.tags ) }}-${{ matrix.docker-base-image }}
